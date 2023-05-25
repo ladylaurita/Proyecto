@@ -1,4 +1,4 @@
-Este contenedor tiene las últimas versiones de nginx, mysql y wordpress pero algo me estoy saltando y no consigo que se conecte a la base de datos.
+Este contenedor tiene las últimas versiones de nginx, mysql y wordpress
 
 
 
