@@ -5,5 +5,5 @@ Este contenedor tiene las últimas versiones de nginx, mysql y wordpress pero al
 # parar los contenedores
 docker compose stop
 
-# borrarcontenedores y volúmenes
+# borrar contenedores y volúmenes
 docker compose down -v
