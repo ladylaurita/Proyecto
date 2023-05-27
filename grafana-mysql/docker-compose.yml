@@ -1,7 +1,6 @@
 version: '2'
 
 services:
-
 mysql:
   image : mysql:5.7
   ports:
@@ -12,7 +11,7 @@ mysql:
   environment:
     TERM: xterm
     APP_ENV: dev
-    MYSQL_USER: user
+    MYSQL_USER: usuario
     MYSQL_PASSWORD: usuario123
     MYSQL_DATABASE: proyecto
     MYSQL_ROOT_PASSWORD: root
@@ -23,15 +22,13 @@ mysql:
     container_name: grafana
     ports:
       - "3000:3000"
-    env_file:
-      - 'env.grafana'
-    user: "0"
     links:
-      - mysql:5.7
+      - mysql
     volumes:
       - ./data_grafana:/var/lib/grafana
 
 volumes:
   data_grafana:
+ 
 
   
