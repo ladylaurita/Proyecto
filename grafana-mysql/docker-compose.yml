@@ -8,7 +8,7 @@ services:
     networks:
       - web
     volumes:
-      - ./grafana/:/var/lib/grafana
+      - data_grafana:/var/lib/grafana
     ports:
       - 3000:3000
 
@@ -30,6 +30,7 @@ services:
       - 3307:3306
 
 volumes:
+  data_grafana:
   mysql_grafana:
 
 networks:
