@@ -4,13 +4,13 @@ services:
 
   grafana:
     image: grafana/grafana
-    container_name: grafana
+    container_name: grafana_LRE
+    networks:
+      - web
     volumes:
       - data_grafana:/var/lib/grafana
     ports:
       - 3000:3000
-    networks:
-      - web
 
   mysql:
     image: mysql:8
@@ -25,13 +25,14 @@ services:
       - MYSQL_ROOT_PASSWORD=secret
       - MYSQL_USER=clem
       - MYSQL_PASSWORD=test
-      - MYSQL_DATABASE=h2olock
+      - MYSQL_DATABASE=testGrafana
     ports:
-      - 3306:3306
+      - 3307:3306
 
 volumes:
   mysql_grafana:
   data_grafana:
+
 networks:
   web:
     driver: bridge
