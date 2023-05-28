@@ -4,11 +4,12 @@ services:
 
   grafana:
     image: grafana/grafana
-    container_name: grafana_LRE
+    container_name: grafana
     networks:
       - web
     volumes:
-      - ./grafana/:/var/lib/grafana
+      - data_grafana:/var/lib/grafana
+      - ./h2olock.json/:/data/application/h2olock.json
     ports:
       - 3000:3000
 
