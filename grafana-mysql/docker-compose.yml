@@ -9,7 +9,6 @@ services:
       - web
     volumes:
       - data_grafana:/var/lib/grafana
-      - ./h2olock.json/:/data/application/h2olock.json
     ports:
       - 3000:3000
 
