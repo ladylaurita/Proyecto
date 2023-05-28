@@ -25,9 +25,9 @@ services:
       - mysql_grafana:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=secret
-      - MYSQL_USER=admin
-      - MYSQL_PASSWORD=secret
-      - MYSQL_DATABASE=prueba
+      - MYSQL_USER=clem
+      - MYSQL_PASSWORD=test
+      - MYSQL_DATABASE=h2olock
     ports:
       - 3306:3306
 
