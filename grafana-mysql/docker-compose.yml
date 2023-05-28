@@ -23,7 +23,7 @@ services:
       - mysql_grafana:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=secret
-      - MYSQL_USER=clem
+      - MYSQL_USER=laura
       - MYSQL_PASSWORD=test
       - MYSQL_DATABASE=testGrafana
     ports:
