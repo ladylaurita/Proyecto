@@ -17,9 +17,9 @@ services:
     container_name: mysql_grafana
     networks:
       - web
-    command: --init-file /data/application/init.sql
+    command: --init-file /data/application/proyecto.sql
     volumes:
-      - ./init.sql:/data/application/init.sql
+      - ./init.sql:/data/application/proyecto.sql
       - mysql_grafana:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=secret
