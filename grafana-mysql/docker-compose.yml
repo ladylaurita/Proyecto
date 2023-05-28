@@ -12,10 +12,14 @@ services:
       - data_grafana:/var/lib/grafana
     ports:
       - 3000:3000
+    networks:
+      - web
 
   mysql:
     image: mysql:8
     container_name: mysql_grafana
+    networks:
+      - web
     command: --init-file /data/application/proyecto.sql
     volumes:
       - ./proyecto.sql:/data/application/proyecto.sql
@@ -31,3 +35,6 @@ services:
 volumes:
   mysql_grafana:
   data_grafana:
+networks:
+  web:
+    driver: bridge
