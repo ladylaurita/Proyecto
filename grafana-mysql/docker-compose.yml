@@ -19,7 +19,7 @@ services:
       - web
     command: --init-file /data/application/proyecto.sql
     volumes:
-      - ./init.sql:/data/application/proyecto.sql
+      - ./proyecto.sql:/data/application/proyecto.sql
       - mysql_grafana:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=secret
