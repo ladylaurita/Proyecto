@@ -5,7 +5,6 @@ services:
   grafana:
     image: grafana/grafana
     container_name: grafana
-    restart: always
     links:
       - mysql
     volumes:
