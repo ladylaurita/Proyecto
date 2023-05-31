@@ -8,5 +8,5 @@ Wordpress se ha instalado a diferencia que en el contenedor wordpress unido al c
 # parar los contenedores
 docker compose stop
 
-# borrarcontenedores y volúmenes
+# borrar contenedores y volúmenes
 docker compose down -v
