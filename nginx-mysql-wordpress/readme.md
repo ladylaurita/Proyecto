@@ -1,4 +1,4 @@
-Este contenedor tiene las últimas versiones de nginx, mysql y wordpress
+Este contenedor tiene las últimas versiones de nginx, mysql y wordpress.
 
 # levantar los contenedores
 docker compose up -d
