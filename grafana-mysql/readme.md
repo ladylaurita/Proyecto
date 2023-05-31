@@ -1,6 +1,6 @@
 docker compose con grafana en el puerto 3000 y mysql en el 3307.
-mysql incorpora una base de datos de mediciones atmosféricas ficticia que se carga automaticamente.
-En la carpeta grafana esta el json correspondiente a un dashboard.
+<p>mysql incorpora una base de datos de mediciones atmosféricas ficticia que se carga automaticamente.
+<p>En la carpeta grafana esta el json correspondiente a un dashboard.
 
 # levantar contenedor
 docker compose up -d
