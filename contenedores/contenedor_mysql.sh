@@ -5,7 +5,7 @@
 
 docker search mysql
 docker pull mysql
-docker run --name mi_sql -e mysql_root_password=usuario123 -d mysql
+docker run --name mi_sql -e MYSQL_ROOT_PASSWORD=usuario123 -d mysql
 docker exec -it mi_sql bash
 
 
