@@ -10,4 +10,4 @@ docker exec -it mi_sql bash
 
 
 #conectarse a la base de datos
-# mysql -u root -p
+# mysql -h localhost -u root -p
