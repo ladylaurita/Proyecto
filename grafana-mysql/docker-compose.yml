@@ -18,6 +18,8 @@ services:
     networks:
       - web
     command: --init-file /data/application/proyecto.sql
+             --init-file /data/application/icor.sql
+             --init-file /data/application/datos.sql
     volumes:
       - ./proyecto.sql:/data/application/proyecto.sql
       - ./icor.sql:/data/application/icor.sql
