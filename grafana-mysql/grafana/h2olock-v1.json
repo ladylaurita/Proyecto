@@ -1,0 +1,2373 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 3,
+  "links": [
+    {
+      "asDropdown": false,
+      "icon": "doc",
+      "includeVars": true,
+      "keepTime": true,
+      "tags": [],
+      "targetBlank": true,
+      "title": "Download Sensors Data",
+      "tooltip": "",
+      "type": "link",
+      "url": "http://172.17.30.226:8080/d/a181514f-711a-46c6-9c6b-ebe009de128e/h2olock?orgId=2&inspect=14&inspectTab=data"
+    }
+  ],
+  "liveNow": true,
+  "panels": [
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "temperature"
+            },
+            "properties": [
+              {
+                "id": "custom.axisColorMode",
+                "value": "series"
+              },
+              {
+                "id": "unit",
+                "value": "celsius"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "custom.axisLabel",
+                "value": "Temperature"
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 15
+              },
+              {
+                "id": "custom.axisPlacement",
+                "value": "left"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "humedad"
+            },
+            "properties": [
+              {
+                "id": "custom.axisColorMode",
+                "value": "series"
+              },
+              {
+                "id": "unit",
+                "value": "humidity"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "orange",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "custom.axisLabel",
+                "value": "Humidity"
+              },
+              {
+                "id": "custom.axisPlacement",
+                "value": "left"
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 15
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "solarRad"
+            },
+            "properties": [
+              {
+                "id": "custom.axisPlacement",
+                "value": "left"
+              },
+              {
+                "id": "custom.axisColorMode",
+                "value": "series"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "yellow",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "unit",
+                "value": "Wm2"
+              },
+              {
+                "id": "custom.axisLabel",
+                "value": "solar radiation"
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 15
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "windSpeed"
+            },
+            "properties": [
+              {
+                "id": "custom.axisLabel",
+                "value": "Wind speed"
+              },
+              {
+                "id": "custom.axisPlacement",
+                "value": "left"
+              },
+              {
+                "id": "custom.axisColorMode",
+                "value": "series"
+              },
+              {
+                "id": "unit",
+                "value": "velocitykmh"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "green",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 15
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "rain"
+            },
+            "properties": [
+              {
+                "id": "custom.axisPlacement",
+                "value": "left"
+              },
+              {
+                "id": "custom.axisLabel",
+                "value": "rain"
+              },
+              {
+                "id": "custom.axisColorMode",
+                "value": "series"
+              },
+              {
+                "id": "unit",
+                "value": "lengthmm"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "blue",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 15
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "winDir"
+            },
+            "properties": [
+              {
+                "id": "custom.axisPlacement",
+                "value": "left"
+              },
+              {
+                "id": "custom.axisLabel",
+                "value": "Wind dir"
+              },
+              {
+                "id": "custom.axisColorMode",
+                "value": "series"
+              },
+              {
+                "id": "unit",
+                "value": "velocitykmh"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "purple",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 15
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "presion"
+            },
+            "properties": [
+              {
+                "id": "custom.axisPlacement",
+                "value": "left"
+              },
+              {
+                "id": "custom.axisLabel",
+                "value": "presion"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "custom.axisColorMode",
+                "value": "series"
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 15
+              },
+              {
+                "id": "unit",
+                "value": "pressurehpa"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "hideTimeOverride": false,
+      "id": 14,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "timezone": [
+          "browser"
+        ],
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "dataset": "h2olock",
+          "datasource": {
+            "type": "mysql",
+            "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "select valores as temperature,$__time(date) from tempout  where  $Temp_out = 'Temp_out' and $__timeFilter(date)\r\n\r\n\r\n\r\n",
+          "refId": "Temp_out",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "date",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "humidity"
+        },
+        {
+          "dataset": "h2olock",
+          "datasource": {
+            "type": "mysql",
+            "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "select valores as windSpeed,$__time(date) from windspeed  where $wind_speed = 'Wind_Speed' AND $__timeFilter(date)\r\n#select Wind, date as time from datos where $wind_speed = 'Wind_Speed' AND $__timeFilter(date)",
+          "refId": "wind Speed",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "date",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "temperature"
+        },
+        {
+          "dataset": "h2olock",
+          "datasource": {
+            "type": "mysql",
+            "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "select valores as solarRad,$__time(date) from solarrad where $solar_rad = 'solar_rad' and $__timeFilter(date);\r\n#select Solar_Rad,date as time from datos where $solar_rad = 'solar_rad'  and $__timeFilter(date)",
+          "refId": "solar_rad",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "date",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "solar_radiation"
+        },
+        {
+          "dataset": "h2olock",
+          "datasource": {
+            "type": "mysql",
+            "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "select valores as humedad,$__time(date) from humout  where $hum_out = 'hum_out' AND $__timeFilter(date) ;\r\n#select Hum_Out,date as time from datos where $hum_out = 'hum_out' AND $__timeFilter(date)",
+          "refId": "Hum_out",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "date",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "temperature"
+        },
+        {
+          "datasource": {
+            "type": "mysql",
+            "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "select valores as rain,$__time(date) from Rain where $rain = 'rain' AND $__timeFilter(date)\r\n#select Rain,date as time from datos where $rain = 'rain' AND $__timeFilter(date)",
+          "refId": "rain",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        },
+        {
+          "datasource": {
+            "type": "mysql",
+            "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "#select valores as winDir, $__time(date) from winddir   where $wind_dir = 'wind_dir' AND $__timeFilter(date)\r\n",
+          "refId": "Wind_dir",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        },
+        {
+          "datasource": {
+            "type": "mysql",
+            "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "select valores as presion,$__time(date) from presion  where  $presion = 'presion' and $__timeFilter(date)",
+          "refId": "presion",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Sensors data",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "series",
+            "axisLabel": "temperature",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 4,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "displayName": "temperature",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "temperatura"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-red",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 70
+              },
+              {
+                "id": "custom.gradientMode",
+                "value": "opacity"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 12,
+        "x": 0,
+        "y": 6
+      },
+      "id": 4,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "dataset": "h2olock",
+          "datasource": {
+            "type": "mysql",
+            "uid": "c7cab07a-c344-4c75-803f-f8f70e4fac43"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "rawQuery": true,
+          "rawSql": "SELECT valores as temperatura, $__time(date) FROM tempout WHERE $__timeFilter(date) \r\n#select TempOut, date as time from data ",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "date",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "temperature"
+        }
+      ],
+      "title": "temperature",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 5,
+        "x": 12,
+        "y": 6
+      },
+      "id": 3,
+      "options": {
+        "autoPlay": false,
+        "customBackground": false,
+        "geolocate": false,
+        "iframeURL": "https://www.rtve.es/play/videos/directo/informativos/24h/",
+        "loop": true,
+        "videoId": "wS14Dv9U0Nc",
+        "videoType": "iframe"
+      },
+      "title": "video_streaming",
+      "type": "innius-video-panel"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "series",
+            "axisLabel": "Percentage covered",
+            "axisPlacement": "left",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 4,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "displayName": "Percentage covered",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "valores"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "#60f0ec",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 70
+              },
+              {
+                "id": "custom.gradientMode",
+                "value": "opacity"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 7,
+        "x": 17,
+        "y": 6
+      },
+      "id": 46,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "dataset": "h2olock",
+          "datasource": {
+            "type": "mysql",
+            "uid": "c7cab07a-c344-4c75-803f-f8f70e4fac43"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "#SELECT date, value FROM h2olock.solar_radiation\r\nselect valores, $__time(date) from tempout where $__timeFilter(date) ",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "date",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "solar_radiation"
+        }
+      ],
+      "title": "Historic Percentage covered",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "series",
+            "axisLabel": "rain",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 4,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "displayName": "rain",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "lengthmm"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "rain"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "blue",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 70
+              },
+              {
+                "id": "custom.gradientMode",
+                "value": "opacity"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 10
+      },
+      "id": 7,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "dataset": "h2olock",
+          "datasource": {
+            "type": "mysql",
+            "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "rawQuery": true,
+          "rawSql": "#SELECT date as time, value FROM h2olock.line_loads\r\nselect valores as rain, $__time(date) from rain where $__timeFilter(date) ",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "date",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "line_loads"
+        }
+      ],
+      "title": "Rain",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#eeecebb8",
+            "mode": "fixed"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "series",
+            "axisLabel": "presion",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 15,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 4,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "displayName": "presion",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "pressurehpa"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "temperatura"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-red",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 70
+              },
+              {
+                "id": "custom.gradientMode",
+                "value": "opacity"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 6,
+        "y": 10
+      },
+      "id": 48,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "dataset": "h2olock",
+          "datasource": {
+            "type": "mysql",
+            "uid": "c7cab07a-c344-4c75-803f-f8f70e4fac43"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "rawQuery": true,
+          "rawSql": "SELECT valores, $__time(date) from presion where $__timeFilter(date) ",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "date",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "temperature"
+        }
+      ],
+      "title": "presion",
+      "type": "timeseries"
+    },
+    {
+      "gridPos": {
+        "h": 5,
+        "w": 2,
+        "x": 17,
+        "y": 10
+      },
+      "id": 42,
+      "libraryPanel": {
+        "name": "Percentage covered",
+        "uid": "f1abb0b8-89f7-4398-80e6-0bc0e2edc64d"
+      },
+      "title": "Percentage covered"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "b024be1c-f972-4594-b38c-bd4a6a21dbc4"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "masskg"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 19,
+        "y": 10
+      },
+      "id": 43,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "mysql",
+            "uid": "b024be1c-f972-4594-b38c-bd4a6a21dbc4"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "select cell_1,cell_2,cell_3,cell_4,cell_5, $__time(date) from cells where $__timeFilter(date) ",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Load Cell",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "series",
+            "axisLabel": "humidity",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 4,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "displayName": "humidity",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "humidity"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "valores"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "orange",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 70
+              },
+              {
+                "id": "custom.gradientMode",
+                "value": "opacity"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 14
+      },
+      "id": 6,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "dataset": "h2olock",
+          "datasource": {
+            "type": "mysql",
+            "uid": "c7cab07a-c344-4c75-803f-f8f70e4fac43"
+          },
+          "editorMode": "code",
+          "format": "time_series",
+          "rawQuery": true,
+          "rawSql": "#SELECT date as time, value FROM h2olock.humidity\r\nselect valores, $__time(date) from humout where $__timeFilter(date) ",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "date",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "humidity"
+        }
+      ],
+      "title": "humidity",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "series",
+            "axisLabel": "solar radiation",
+            "axisPlacement": "left",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 4,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "displayName": "solar_radiation",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "Wm2"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "valores"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "yellow",
+                  "mode": "fixed"
+                }
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 70
+              },
+              {
+                "id": "custom.gradientMode",
+                "value": "opacity"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 6,
+        "y": 14
+      },
+      "id": 8,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "dataset": "h2olock",
+          "datasource": {
+            "type": "mysql",
+            "uid": "c7cab07a-c344-4c75-803f-f8f70e4fac43"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "#SELECT date, value FROM h2olock.solar_radiation\r\nselect valores, $__time(date) from solarrad where $__timeFilter(date) ",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "date",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "solar_radiation"
+        }
+      ],
+      "title": "Solar radiation",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
+      "id": 39,
+      "options": {
+        "baidu": {
+          "callback": "bmapReady",
+          "key": ""
+        },
+        "editor": {
+          "format": "auto",
+          "height": 600
+        },
+        "gaode": {
+          "key": "",
+          "plugin": "AMap.Scale,AMap.ToolBar"
+        },
+        "getOption": "function getColorBasedOnSpeed(speed) {\r\n  if (speed >= 0 && speed < 20) return 'lightgreen';\r\n  else if (speed >= 20 && speed < 40) return 'green';\r\n  else if (speed >= 40 && speed < 60) return 'yellow';\r\n  else if (speed >= 60 && speed < 80) return 'orange';\r\n  else if (speed >= 80 && speed < 100) return 'red';\r\n  else if (speed >= 100) return 'darkred';\r\n  else return 'gray';\r\n}\r\n\r\nconst legendData = [\r\n  { name: '0-20 km/h', color: 'lightgreen' },\r\n  { name: '20-40 km/h', color: 'green' },\r\n  { name: '40-60 km/h', color: 'yellow' },\r\n  { name: '60-80 km/h', color: 'orange' },\r\n  { name: '80-100 km/h', color: 'red' },\r\n  { name: '>100 km/h', color: 'darkred' },\r\n];\r\n\r\nconst legendSeries = legendData.map((item) => {\r\n  return {\r\n    name: item.name,\r\n    type: 'line',\r\n    lineStyle: { width: 0 }, // hide the line\r\n    symbolSize: 0, // hide the symbol\r\n    itemStyle: {\r\n      color: item.color\r\n    },\r\n    data: [] // no actual data\r\n  };\r\n});\r\n\r\nconst series = data.series.map((s) => {\r\n  const sData = s.fields.find((f, index) => index === 0).values.buffer;\r\n  const sTime = s.fields.find((f, index) => index === 1).values.buffer;\r\n  const sAngle = s.fields.find((f, index) => index === 0).values.buffer;\r\n  const sSpeed = s.fields.find((f, index) => index === 2).values.buffer;\r\n\r\n  return {\r\n    name: s.refId,\r\n    type: 'line',\r\n    showSymbol: true,\r\n    symbol: \"path://m13.022 14.999v3.251c0 .412.335.75.752.75.188 0 .375-.071.518-.206 1.775-1.685 4.945-4.692 6.396-6.069.2-.189.312-.452.312-.725 0-.274-.112-.536-.312-.725-1.451-1.377-4.621-4.385-6.396-6.068-.143-.136-.33-.207-.518-.207-.417 0-.752.337-.752.75v3.251h-9.02c-.531 0-1.002.47-1.002 1v3.998c0 .53.471 1 1.002 1z\",\r\n    symbolSize: 15,\r\n    areaStyle: {\r\n      opacity: 0.1,\r\n    },\r\n    lineStyle: {\r\n      width: 1,\r\n    },\r\n    data: sData.map((d, i) => {\r\n      let adjustedAngle = sAngle[i] + 90;\r\n      if (adjustedAngle >= 360) adjustedAngle -= 360;\r\n      return {\r\n        value: [sTime[i], sSpeed[i]], // changed from 'd' to 'sSpeed[i]'\r\n        symbolRotate: adjustedAngle,\r\n        itemStyle: {\r\n          color: getColorBasedOnSpeed(sSpeed[i])\r\n        }\r\n      };\r\n    }),\r\n  };\r\n});\r\n\r\nsetTimeout(() => echartsInstance.dispatchAction({\r\n  type: 'takeGlobalCursor',\r\n  key: 'dataZoomSelect',\r\n  dataZoomSelectActive: true,\r\n}), 500);\r\n\r\nechartsInstance.on('datazoom', function (params) {\r\n  const startValue = params.batch[0]?.startValue;\r\n  const endValue = params.batch[0]?.endValue;\r\n  locationService.partial({ from: startValue, to: endValue });\r\n});\r\n\r\nreturn {\r\n  backgroundColor: 'transparent',\r\n  tooltip: {\r\n    trigger: 'axis',\r\n  },\r\n  legend: {\r\n    orient: 'horizontal',\r\n    left: 'centre',\r\n    bottom: '1%', // Adjust this value as needed to position the legend\r\n    data: legendData.map((item) => item.name),\r\n    textStyle: {\r\n      color: 'rgba(128, 128, 128, .9)',\r\n    },\r\n  },\r\n  toolbox: {\r\n    feature: {\r\n      dataZoom: {\r\n        yAxisIndex: 'none',\r\n        icon: {\r\n          zoom: 'path://',\r\n          back: 'path://',\r\n        },\r\n      },\r\n      saveAsImage: {},\r\n    }\r\n  },\r\n  xAxis: {\r\n    type: 'time',\r\n  },\r\n  yAxis: {\r\n    type: 'value',\r\n    min: 'dataMin',\r\n  },\r\n  grid: {\r\n    left: '2%',\r\n    right: '2%',\r\n    top: '2%',\r\n    bottom: '25%',\r\n    containLabel: true,\r\n  },\r\n  series: [...series, ...legendSeries], // include the legend series in the series data\r\n};\r\n\r\n",
+        "google": {
+          "callback": "gmapReady",
+          "key": ""
+        },
+        "map": "none",
+        "renderer": "canvas",
+        "themeEditor": {
+          "config": "{}",
+          "height": 400,
+          "name": "default"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "mysql",
+            "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "select s.valores as direccion, $__time(s.date), v.valores as speed \r\nfrom winddir s \r\ninner join windspeed v \r\non s.date = v.date \r\nwhere $__timeFilter(v.date) ",
+          "refId": "Wind Speed & direction",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "wind speed & direction",
+      "type": "volkovlabs-echarts-panel"
+    },
+    {
+      "datasource": {
+        "type": "mysql",
+        "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 12,
+        "x": 0,
+        "y": 18
+      },
+      "id": 10,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xField": "time",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 100
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "dataset": "h2olock",
+          "datasource": {
+            "type": "mysql",
+            "uid": "c7cab07a-c344-4c75-803f-f8f70e4fac43"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "#SELECT value as temperature, date FROM h2olock.temperature\r\nSELECT TempOut ,TempIn, date as time from datos",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "date",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "temperature"
+        },
+        {
+          "dataset": "h2olock",
+          "datasource": {
+            "type": "mysql",
+            "uid": "c7cab07a-c344-4c75-803f-f8f70e4fac43"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "#SELECT value as solar_radiation, date FROM h2olock.solar_radiation\r\n#SELECT `temp_in`, date as time from data ",
+          "refId": "B",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              },
+              {
+                "parameters": [
+                  {
+                    "name": "date",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "table": "solar_radiation"
+        }
+      ],
+      "title": "Evaporation and water quality",
+      "type": "barchart"
+    },
+    {
+      "gridPos": {
+        "h": 7,
+        "w": 3,
+        "x": 18,
+        "y": 22
+      },
+      "id": 44,
+      "libraryPanel": {
+        "name": "Percentage of water",
+        "uid": "b6b65964-0623-4711-9977-73c5893ff040"
+      },
+      "title": "Percentage of water"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "energy_production"
+          ],
+          "value": [
+            "energy_production"
+          ]
+        },
+        "description": "",
+        "hide": 2,
+        "includeAll": false,
+        "label": "energy_production",
+        "multi": true,
+        "name": "energy_production",
+        "options": [
+          {
+            "selected": true,
+            "text": "energy_production",
+            "value": "energy_production"
+          }
+        ],
+        "query": "energy_production",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "humidity"
+          ],
+          "value": [
+            "humidity"
+          ]
+        },
+        "hide": 2,
+        "includeAll": false,
+        "label": "humidity",
+        "multi": true,
+        "name": "humidity",
+        "options": [
+          {
+            "selected": true,
+            "text": "humidity",
+            "value": "humidity"
+          }
+        ],
+        "query": "humidity",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "line_loads"
+          ],
+          "value": [
+            "line_loads"
+          ]
+        },
+        "description": "",
+        "hide": 2,
+        "includeAll": false,
+        "label": "line_loads",
+        "multi": true,
+        "name": "line_loads",
+        "options": [
+          {
+            "selected": true,
+            "text": "line_loads",
+            "value": "line_loads"
+          }
+        ],
+        "query": "line_loads",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "solar_radiation"
+          ],
+          "value": [
+            "solar_radiation"
+          ]
+        },
+        "hide": 2,
+        "includeAll": false,
+        "label": "solar_radiation",
+        "multi": true,
+        "name": "solar_radiation",
+        "options": [
+          {
+            "selected": true,
+            "text": "solar_radiation",
+            "value": "solar_radiation"
+          }
+        ],
+        "query": "solar_radiation",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "temperature"
+          ],
+          "value": [
+            "temperature"
+          ]
+        },
+        "hide": 2,
+        "includeAll": false,
+        "multi": true,
+        "name": "temperature",
+        "options": [
+          {
+            "selected": true,
+            "text": "temperature",
+            "value": "temperature"
+          }
+        ],
+        "query": "temperature",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "wind_speed"
+          ],
+          "value": [
+            "wind_speed"
+          ]
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "wind_speed",
+        "multi": true,
+        "name": "wind_speed",
+        "options": [
+          {
+            "selected": true,
+            "text": "wind_speed",
+            "value": "wind_speed"
+          }
+        ],
+        "query": "wind_speed",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "Temp_in"
+          ],
+          "value": [
+            "Temp_in"
+          ]
+        },
+        "hide": 2,
+        "includeAll": false,
+        "label": "Temp_in",
+        "multi": true,
+        "name": "Temp_in",
+        "options": [
+          {
+            "selected": true,
+            "text": "Temp_in",
+            "value": "Temp_in"
+          }
+        ],
+        "query": "Temp_in",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "Temp_out"
+          ],
+          "value": [
+            "Temp_out"
+          ]
+        },
+        "description": "Temp_out",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Temp_out",
+        "multi": true,
+        "name": "Temp_out",
+        "options": [
+          {
+            "selected": true,
+            "text": "Temp_out",
+            "value": "Temp_out"
+          }
+        ],
+        "query": "Temp_out",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "hum_out"
+          ],
+          "value": [
+            "hum_out"
+          ]
+        },
+        "description": "hum_out",
+        "hide": 0,
+        "includeAll": false,
+        "label": "hum_out",
+        "multi": true,
+        "name": "hum_out",
+        "options": [
+          {
+            "selected": true,
+            "text": "hum_out",
+            "value": "hum_out"
+          }
+        ],
+        "query": "hum_out",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "hum_in"
+          ],
+          "value": [
+            "hum_in"
+          ]
+        },
+        "description": "hum_in",
+        "hide": 2,
+        "includeAll": false,
+        "label": "hum_in",
+        "multi": true,
+        "name": "hum_in",
+        "options": [
+          {
+            "selected": true,
+            "text": "hum_in",
+            "value": "hum_in"
+          }
+        ],
+        "query": "hum_in",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "solar_rad"
+          ],
+          "value": [
+            "solar_rad"
+          ]
+        },
+        "description": "solar_rad",
+        "hide": 0,
+        "includeAll": false,
+        "label": "solar_rad",
+        "multi": true,
+        "name": "solar_rad",
+        "options": [
+          {
+            "selected": true,
+            "text": "solar_rad",
+            "value": "solar_rad"
+          }
+        ],
+        "query": "solar_rad",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "rain"
+          ],
+          "value": [
+            "rain"
+          ]
+        },
+        "description": "rain",
+        "hide": 0,
+        "includeAll": false,
+        "label": "rain",
+        "multi": true,
+        "name": "rain",
+        "options": [
+          {
+            "selected": true,
+            "text": "rain",
+            "value": "rain"
+          }
+        ],
+        "query": "rain",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": [
+            "wind_dir"
+          ],
+          "value": [
+            "wind_dir"
+          ]
+        },
+        "description": "wind_dir",
+        "hide": 2,
+        "includeAll": false,
+        "label": "wind_dir",
+        "multi": true,
+        "name": "wind_dir",
+        "options": [
+          {
+            "selected": true,
+            "text": "wind_dir",
+            "value": "wind_dir"
+          }
+        ],
+        "query": "wind_dir",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "mysql",
+          "uid": "b2d587e4-6ca5-4b72-9016-b04bbdcac1c7"
+        },
+        "definition": "show tables;",
+        "hide": 2,
+        "includeAll": true,
+        "multi": true,
+        "name": "variable",
+        "options": [],
+        "query": "show tables;",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "presion",
+          "value": "presion"
+        },
+        "description": "presion",
+        "hide": 0,
+        "includeAll": false,
+        "label": "presion",
+        "multi": true,
+        "name": "presion",
+        "options": [
+          {
+            "selected": true,
+            "text": "presion",
+            "value": "presion"
+          }
+        ],
+        "query": "presion",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "h2olock",
+  "uid": "a181514f-711a-46c6-9c6b-ebe009de128e",
+  "version": 216,
+  "weekStart": "monday"
+}
